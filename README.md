@@ -22,7 +22,7 @@ data = open('team_record.json')
 records = json.load(data)
 ```
 
-When loaded in, the keys of this dictionary are the abbreivations of each team. The values of each of the keys are dictionaries containing the remaining teams as keys whose values are also dictionaries containing the wins and losses as keys, and the numerical values as their values. A list of the teams to sort through and generate the final table is then created by using the keys from this dictionary, done using the following line:
+When loaded in, the keys of this dictionary are the teams. The values of each of the keys are dictionaries containing the remaining teams as keys whose values are also dictionaries containing the wins and losses as keys, and the numerical values as their values. A list of the teams to sort through and generate the final table is then created by using the keys from this dictionary, done using the following line:
 ```
 teams = list(records.keys())
 ```
@@ -46,7 +46,7 @@ for i in teams:
     winsList.clear()
 ```
 
-First, the winsList list appends the current team name to the beginning of the list for table formatting purposes. Then, the current team loops through the list of every other team to search for their wins. This nested loop checks to ensure that the current team is not checking a record against itself. I accomplished this by searching for the value of the corresponding team key from the outer loop, and then searching the value of this key for the key of the team being searched for in the inner loop. If this value does not equal None, then a record does exist against this team, and the value of the win is accomplished searching as previously mentioned, and then searching for the value corresponding to the key "W", which is then appended to the winsList list. Otherwise, the value "--" is appended to the winsList list to designate that there is no record. After this inner loop has concluded, a copy of the current wins list for the team is appended to the overallRecord list to prevent mutations, and then the current winsList is cleared to be reused when looping again. This loop runs in O(n^2) time, which is the run time of the program.
+First, the winsList list appends the current team name to the beginning of the list for table formatting purposes. Then, the current team loops through the list of every other team to search for their wins. This nested loop checks to ensure that the current team is not checking a record against itself. I accomplished this by searching for the value of the corresponding team key from the outer loop, and then searching the value of this key for the key of the team being searched for in the inner loop. If this value does not equal None, then a record does exist against this team, and the value of the win is accomplished by searching as previously mentioned, and then searching for the value corresponding to the key "W", which is then appended to the winsList list. Otherwise, the value "--" is appended to the winsList list to designate that there is no record. After this inner loop has concluded, a copy of the current wins list for the team is appended to the overallRecord list to prevent mutations, and then the current winsList is cleared to be reused when looping again. This loop runs in O(n^2) time, which is the run time of the program.
 
 
 After succesfully looping through, the teams list is modified to append "Tm" to the beginning for table formatting purposes. This is done through the following code:
