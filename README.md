@@ -3,7 +3,7 @@
 This is the README.md file explaining the solution to the coding question for the Sports Reference Engineering Internship position.
 
 ## How to Run the Program
-First, ensure you have the tabulate package installed for Python 3 in order to properly view the table generated. This can be done by typing the following in the terminal:
+First, ensure you have the tabulate package installed for Python 3 in order to properly view the table generated. This can be done by typing the following in the terminal in VSCode:
 ```
 $ pip3 install tabulate
 ```
